@@ -11,7 +11,7 @@ singleuser:
     guarantee: 1G
     limit: 1G
   image:
-    name: kuberlytics/datahub-user
+    name: kuberlytics/jupyterhub-user
   storage:
     type: hostPath
     extraVolumes:
