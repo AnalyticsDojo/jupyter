@@ -56,13 +56,6 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
-COPY connectors/neuro.bash /usr/local/sbin/connector-neuro.bash
-RUN /usr/local/sbin/connector-neuro.bash
-
-ENV NLTK_DATA ${APP_DIR}/nltk_data
-COPY connectors/text.bash /usr/local/sbin/connector-text.bash
-RUN /usr/local/sbin/connector-text.bash
-
 # package for instructors and gsis; requirements.txt would need an egg
 RUN pip install --no-cache-dir \
 	git+https://github.com/data-8/connector-instructors.git@e7bd553
@@ -77,18 +70,11 @@ RUN pip install git+https://github.com/data-8/nbresuse.git@2f9144f && \
 RUN pip install git+https://github.com/data-8/gitautosync@ef77091 && \
 	jupyter serverextension enable  --sys-prefix --py nbgitautosync
 
-# gmaps notebook extension 
+# gmaps notebook extension
 # for ls 88-4, economic development connector
 RUN pip install --no-cache-dir gmaps && \
   jupyter nbextension enable --py --sys-prefix gmaps
 
 ADD ipython_config.py ${IPYTHONDIR}/ipython_config.py
-
-# HACK: We wanna make sure students don't hit the 60/hr/IP limit for github
-# So we just put in a Personal Access Token for a dummy here.
-# FIXME: Move the token to travis encrypted secrets
-ENV NETRC /srv/app/.netrc
-COPY netrc-gen /tmp/netrc-gen
-RUN /tmp/netrc-gen ${NETRC}
-
+#test
 EXPOSE 8888

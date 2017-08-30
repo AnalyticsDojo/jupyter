@@ -87,7 +87,7 @@ def main():
     argparser = argparse.ArgumentParser()
     argparser.add_argument(
         '--user-image-spec',
-        default='berkeleydsep/datahub-user'
+        default='kuberlytics/jupyterhub-user'
     )
     subparsers = argparser.add_subparsers(dest='action')
 
