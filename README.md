@@ -1,12 +1,12 @@
-# Berkeley JupyterHubs
+# Kuberlytics Jupyterhub
 
-Contains a fully reproducible configuration for JupyterHub on datahub.berkeley.edu,
+Contains a fully reproducible configuration for JupyterHub on lab.kuberlytics.com,
 as well as its single user image.
 
 ## Branches
 
-The `staging` branch always reflects the state of the [staging JupyterHub](http://staging.datahub.berkeley.edu),
-and the `prod` branch reflects the state of the [production JupyterHub](http://datahub.berkeley.edu).
+The `staging` branch always reflects the state of the [staging JupyterHub](http://staging.kuberlytics.com),
+and the `prod` branch reflects the state of the [production JupyterHub](http://lab.kuberlytics.com).
 
 ## Procedure
 
@@ -17,7 +17,7 @@ branch of this repo while the choice for `head` is your fork. The pull
 request will trigger a [Travis CI](https://travis-ci.org/) process and
 potentially a rebuild of docker images depending on what modifications
 have been proposed. You can observe the status of the CI process by
-visiting its link on the page for your PR, or by finding it on 
+visiting its link on the page for your PR, or by finding it on
 [Travis' build list](https://travis-ci.org/berkeley-dsep-infra/datahub/builds).
 
 Once this is complete and if there are no problems, you can request that
@@ -30,7 +30,7 @@ problems you can revert your change. You should test the changes soon
 after the merge since we do not want unverified changes to linger in
 staging.
 
-If staging fails, *never* update production. Revert your change or 
+If staging fails, *never* update production. Revert your change or
 call in help if necessary. If your change is successful, you will need
 to merge the change from staging branch to production. Create another PR,
 this time with the `base` set to prod and the `head` set to staging. This
