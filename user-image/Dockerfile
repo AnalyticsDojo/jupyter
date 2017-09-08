@@ -1,20 +1,42 @@
-FROM ubuntu:17.04
+# Copyright (c) Jupyter Development Team.
+# Distributed under the terms of the Modified BSD License.
+# Updated from https://github.com/jupyter/docker-stacks/blob/master/datascience-notebook/Dockerfile
 
+FROM jupyter/scipy-notebook
+FROM jupyter/scipy-notebook
+
+MAINTAINER Jupyter Project <jupyter@googlegroups.com>
+
+USER root
+
+# R pre-requisites
 RUN apt-get update && \
-    apt-get install --yes --no-install-recommends python3 python3-venv && \
-    apt-get purge && apt-get clean
+    apt-get install -y --no-install-recommends \
+    fonts-dejavu \
+    gfortran \
+    gcc && apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN adduser --disabled-password --gecos "Default Jupyter user" jovyan
+USER $NB_USER
 
-RUN mkdir -p /srv/venv && chown -R jovyan:jovyan /srv/venv
-
-USER jovyan
-
-RUN python3 -m venv /srv/venv
-RUN /srv/venv/bin/pip3 install --no-cache-dir notebook ipykernel jupyterhub
-
-ENV PATH /srv/venv/bin:$PATH
-
-WORKDIR /home/jovyan
-
-EXPOSE 8888
+# R packages including IRKernel which gets installed globally.
+RUN conda config --system --add channels r && \
+    conda install --quiet --yes \
+    'rpy2=2.8*' \
+    'r-base=3.3.2' \
+    'r-irkernel=0.7*' \
+    'r-plyr=1.8*' \
+    'r-devtools=1.12*' \
+    'r-tidyverse=1.0*' \
+    'r-shiny=0.14*' \
+    'r-rmarkdown=1.2*' \
+    'r-forecast=7.3*' \
+    'r-rsqlite=1.1*' \
+    'r-reshape2=1.4*' \
+    'r-nycflights13=0.2*' \
+    'r-caret=6.0*' \
+    'r-rcurl=1.95*' \
+    'r-crayon=1.3*' \
+    'r-randomforest=4.6*' && \
+    conda clean -tipsy && \
+    fix-permissions $CONDA_DIR
