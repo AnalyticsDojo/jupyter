@@ -3,7 +3,6 @@
 # Updated from https://github.com/jupyter/docker-stacks/blob/master/datascience-notebook/Dockerfile
 
 FROM jupyter/scipy-notebook
-FROM jupyter/scipy-notebook
 
 MAINTAINER Jupyter Project <jupyter@googlegroups.com>
 
@@ -14,10 +13,15 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
     gfortran \
+    nano \
     gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 USER $NB_USER
+
+#Jason Added
+RUN conda install -c conda-forge --quiet --yes \
+    'fastparquet=0.1*'
 
 # R packages including IRKernel which gets installed globally.
 RUN conda config --system --add channels r && \
