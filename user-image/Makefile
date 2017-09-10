@@ -1,5 +1,5 @@
 VERSION=$(shell git rev-parse --short HEAD)
-IMAGE=kuberlytics/singleuser-datahub
+IMAGE=analyticsdojo/jupyter
 
 release: VERSION=$(shell  git tag -l --points-at HEAD)
 
