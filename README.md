@@ -1,12 +1,12 @@
-# Kuberlytics Jupyterhub
+# AnalyticsDojo Jupyter Image
 
-Contains a fully reproducible configuration for JupyterHub on lab.kuberlytics.com,
+Contains a fully reproducible configuration for JupyterHub on lab.analyticsdojo.com,
 as well as its single user image.
 
 ## Branches
 
-The `staging` branch always reflects the state of the [staging JupyterHub](http://staging.kuberlytics.com),
-and the `prod` branch reflects the state of the [production JupyterHub](http://lab.kuberlytics.com).
+The `staging` branch always reflects the state of the [staging JupyterHub](http://staging.analyticsdojo.com),
+and the `prod` branch reflects the state of the [production JupyterHub](http://lab.analyticsdojo.com).
 
 ## Procedure
 
