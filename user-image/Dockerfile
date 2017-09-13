@@ -21,7 +21,8 @@ USER $NB_USER
 
 #Jason Added
 RUN conda install -c conda-forge --quiet --yes \
-    'fastparquet=0.1*'
+    'fastparquet=0.1*' \
+    'nbpresent=3.0*'
 RUN conda install --quiet --yes 'nb_conda=2.2*'
 # R packages including IRKernel which gets installed globally.
 RUN conda config --system --add channels r && \
