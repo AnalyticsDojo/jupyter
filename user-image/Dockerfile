@@ -24,7 +24,6 @@ RUN conda install -c conda-forge --quiet --yes \
     'fastparquet=0.1*' \
     'nbpresent=3.0*'
 RUN conda install --quiet --yes  \
-    'nb_conda=2.2*' \
     'pandas-datareader=0.5*'
 
 # R packages including IRKernel which gets installed globally.
