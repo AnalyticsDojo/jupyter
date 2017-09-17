@@ -16,7 +16,7 @@ mne==0.14.1
 nibabel==2.1.0
 h5py==2.7.0
 #
-# cogsci88; 
+# cogsci88;
 ggplot==0.11.5
 #
 # ls 88-5; text
@@ -28,3 +28,4 @@ seaborn==0.8.0
 bokeh==0.12.6
 decorator==4.1.2
 networkx==1.11
+pandas-datareader==0.5.0
