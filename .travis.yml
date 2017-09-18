@@ -11,14 +11,12 @@ script:
 branches:
   only:
   - staging
-  - prod
 deploy:
   provider: script
   script: "./travis/travis-script.bash deploy"
   on:
     branch:
     - staging
-    - prod
 env:
   global:
   - secure: aPUAJm5JCyIBQFirKHG482e9UrEkqKBR2UFbJKBao2VOL7aPVZmAjZK9/JDwZf5322UQeKtxPfoan9E013BBd0/waUmLu5GzbbigEGonjA9XG4ce2VHBi1F123DJyAQy+Nb5wLlpu+jL1LZzhBjvD0qBvzKSqFUYSQo8TrB8zkMZbjbpeV9FVEf4U9wyJZJ7c5c9bQhtvn8m+wscZeK7rXxLtz1pRuax95oQRvrWcm03WFusLU1HGw/OtGyHnqKqFSrmI+DnUteEVqfPpL2wmyvNE6gFTyKWPZoupHVJ53/IOOLiRYZDgt7nV525JI/0uSAjdjn+naK9rbLwtuGSrkg1Wj0QA0yV2MftW4tJi4i8fDtXXwP8wBFSkQtBhcPFSccvTiMnjnjCT9DMttUDadI8XSyjXOKblTNwn59ygrvNVMENDCc5FtxuCXaG547zqDW4NRTu8zZs8h3eKJinX+4sZ/99mbI23M8chFY7Ot5DftD5z/nUtHLA6dKQ2Qp1lONGtL2HRQ+iEFFt7uzj7vsciSyqpV4jSSTJ5hG0+UElf9cjEqHO0we0VJtx5M2ZQM8ysbY9zPGMJO0qrhsM5byQ/HQWiyw+9FVwjpFdCAnU/jjbmaV1ZTAeSSODEDlIx8v79wTTZ0Z5H5G4r9PqDy4AMUxBUedzvWttClw+G40=
