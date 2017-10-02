@@ -51,4 +51,4 @@ RUN conda config --system --add channels r && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 #add twitter
-RUN /opt/conda/bin/pip install twitter==1.17*
+RUN /opt/conda/bin/pip install twitter==1.17.1
