@@ -23,9 +23,11 @@ USER $NB_USER
 RUN conda install -c conda-forge --quiet --yes \
     'fastparquet=0.1*' \
     'nbpresent=3.0*' \
-    'ipython_unittest=0.2*'
+    'ipython_unittest=0.2*' \
+    'ruamel.yaml=0.15*'
 RUN conda install --quiet --yes  \
-    'pandas-datareader=0.5*'
+    'pandas-datareader=0.5*' \
+    'beautifulsoup4=4.6*'
 
 # R packages including IRKernel which gets installed globally.
 RUN conda config --system --add channels r && \
@@ -48,4 +50,5 @@ RUN conda config --system --add channels r && \
     'r-randomforest=4.6*' && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
-#Touching user image so it builds.
+#add twitter
+RUN /opt/conda/bin/pip install twitter==1.17*

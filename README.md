@@ -3,6 +3,13 @@
 Contains a fully reproducible configuration for JupyterHub on lab.analyticsdojo.com,
 as well as its single user image.
 
+# Build User Locally
+
+```
+cd user-image
+make build
+```
+
 ## Branches
 
 The `staging` branch always reflects the state of the [staging JupyterHub](http://staging.analyticsdojo.com),
