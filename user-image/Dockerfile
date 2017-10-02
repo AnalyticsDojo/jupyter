@@ -52,3 +52,5 @@ RUN conda config --system --add channels r && \
     fix-permissions $CONDA_DIR
 #add twitter
 RUN /opt/conda/bin/pip install twitter==1.17.1
+RUN conda install -c conda-forge --quiet --yes \
+    'plotly=2.0*' 
