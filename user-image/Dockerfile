@@ -27,7 +27,8 @@ RUN conda install -c conda-forge --quiet --yes \
     'ruamel.yaml=0.15*'
 RUN conda install --quiet --yes  \
     'pandas-datareader=0.5*' \
-    'beautifulsoup4=4.6*'
+    'beautifulsoup4=4.6*' \
+    'jupyterhub==0.8.0.rc2  '
 
 # R packages including IRKernel which gets installed globally.
 RUN conda config --system --add channels r && \
@@ -53,4 +54,6 @@ RUN conda config --system --add channels r && \
 #add twitter
 RUN /opt/conda/bin/pip install twitter==1.17.1
 RUN conda install -c conda-forge --quiet --yes \
-    'plotly=2.0*' 
+    'plotly=2.0*'
+ARG JUPYTERHUB_VERSION=0.8
+RUN pip install --no-cache jupyterhub==$JUPYTERHUB_VERSION
