@@ -3,11 +3,11 @@
 Contains a fully reproducible configuration for JupyterHub on lab.analyticsdojo.com,
 as well as its single user image.
 
-# Build User Locally
+# Run
 
 ```
-cd user-image
-make build
+docker run -it --rm -p 8888:8888  -v /Users/<path to repository>:/home/jovyan/work --user root -e GRANT_SUDO=yes kuberlytics/jupyter-singleuser-controller:latest
+
 ```
 
 ## Branches

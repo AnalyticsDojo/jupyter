@@ -27,7 +27,8 @@ RUN conda install -c conda-forge --quiet --yes \
     'ruamel.yaml=0.15*'
 RUN conda install --quiet --yes  \
     'pandas-datareader=0.5*' \
-    'beautifulsoup4=4.6*' 
+    'beautifulsoup4=4.6*' \
+    'shapely=1.5*'
 
 # R packages including IRKernel which gets installed globally.
 RUN conda config --system --add channels r && \
