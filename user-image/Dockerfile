@@ -14,6 +14,7 @@ RUN apt-get update && \
     fonts-dejavu \
     gfortran \
     nano \
+    cmake \
     gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
