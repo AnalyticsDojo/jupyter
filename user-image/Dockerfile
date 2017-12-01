@@ -14,8 +14,6 @@ RUN apt-get update && \
     fonts-dejavu \
     gfortran \
     nano \
-    cmake \
-    zlib1g-dev \
     gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -100,8 +98,10 @@ RUN conda install --quiet --yes \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
-RUN pip install gym[all]
+#    cmake \
+#    zlib1g-dev \
+#RUN pip install gym[all]
 # Get the faster VNC driver
-RUN pip install go-vncdriver>=0.4.0
+#RUN pip install go-vncdriver>=0.4.0
 
 USER $NB_USER
