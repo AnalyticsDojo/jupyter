@@ -15,6 +15,7 @@ RUN apt-get update && \
     gfortran \
     nano \
     cmake \
+    zlib1g-dev \
     gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
