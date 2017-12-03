@@ -98,6 +98,8 @@ RUN conda install --quiet --yes \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
+#Add tensorboard
+RUN pip install --pre jupyter-tensorboard
 #    cmake \
 #    zlib1g-dev \
 #RUN pip install gym[all]
