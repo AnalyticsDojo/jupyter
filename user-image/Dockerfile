@@ -100,6 +100,8 @@ RUN conda install --quiet --yes \
 RUN conda install --yes --quiet -c  damianavila82 rise
 RUN conda install --yes --quiet -c anaconda nltk
 RUN conda install --yes --quiet -c anaconda gensim
+RUN conda install --yes --quiet -c conda-forge bazel
+
 #Add tensorboard
 RUN /opt/conda/bin/pip install --pre jupyter-tensorboard
 #    cmake \
