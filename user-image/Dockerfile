@@ -97,7 +97,9 @@ RUN conda install --quiet --yes \
     'keras=2.0*' && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
-RUN conda install --yes --quiet -c  damianavila82 rise 
+RUN conda install --yes --quiet -c  damianavila82 rise
+RUN conda install --yes --quiet -c anaconda nltk
+
 #Add tensorboard
 RUN pip install --pre jupyter-tensorboard
 #    cmake \
