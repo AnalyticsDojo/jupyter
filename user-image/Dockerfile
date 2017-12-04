@@ -99,9 +99,9 @@ RUN conda install --quiet --yes \
     fix-permissions $CONDA_DIR
 RUN conda install --yes --quiet -c  damianavila82 rise
 RUN conda install --yes --quiet -c anaconda nltk
-
+RUN conda install --yes --quiet -c anaconda gensim
 #Add tensorboard
-RUN pip install --pre jupyter-tensorboard
+RUN /opt/conda/bin/pip install --pre jupyter-tensorboard
 #    cmake \
 #    zlib1g-dev \
 #RUN pip install gym[all]
