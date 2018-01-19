@@ -109,5 +109,8 @@ RUN /opt/conda/bin/pip install --pre jupyter-tensorboard
 #RUN pip install gym[all]
 # Get the faster VNC driver
 #RUN pip install go-vncdriver>=0.4.0
+RUN pip install git+https://github.com/data-8/gitautosync
+RUN jupyter serverextension enable --py nbgitpuller --sys-prefix
+
 
 USER $NB_USER
