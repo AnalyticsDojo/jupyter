@@ -2,7 +2,7 @@
 # Distributed under the terms of the Modified BSD License.
 # Updated from https://github.com/jupyter/docker-stacks/blob/master/datascience-notebook/Dockerfile
 
-FROM jupyter/scipy-notebook:281505737f8a
+FROM jupyter/scipy-notebook:27ba57364579
 
 MAINTAINER Jupyter Project <jupyter@googlegroups.com>
 
