@@ -55,7 +55,7 @@ RUN conda config --system --add channels r && \
 RUN /opt/conda/bin/pip install twitter==1.17.1
 RUN conda install -c conda-forge --quiet --yes \
     'plotly=2.0*'
-ARG JUPYTERHUB_VERSION=0.7.2
+ARG JUPYTERHUB_VERSION=0.8
 RUN pip install --no-cache jupyterhub==$JUPYTERHUB_VERSION
 
 USER root
